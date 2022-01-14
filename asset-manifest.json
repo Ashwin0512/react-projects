@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-projects/static/css/main.abd64e84.css",
-    "main.js": "/react-projects/static/js/main.14436b58.js",
-    "index.html": "/react-projects/index.html",
-    "main.abd64e84.css.map": "/react-projects/static/css/main.abd64e84.css.map",
-    "main.14436b58.js.map": "/react-projects/static/js/main.14436b58.js.map"
+    "main.css": "/react-projects/expense-tracker/static/css/main.abd64e84.css",
+    "main.js": "/react-projects/expense-tracker/static/js/main.14436b58.js",
+    "index.html": "/react-projects/expense-tracker/index.html",
+    "main.abd64e84.css.map": "/react-projects/expense-tracker/static/css/main.abd64e84.css.map",
+    "main.14436b58.js.map": "/react-projects/expense-tracker/static/js/main.14436b58.js.map"
   },
   "entrypoints": [
     "static/css/main.abd64e84.css",

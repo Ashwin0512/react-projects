@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import './App.css';
 import AddTransaction from './components/AddTransaction';
 import ListItem from './components/ListItem';
 import Span from './components/Span';
+import './App.css'
 
 function App() {
 
@@ -20,9 +20,25 @@ function App() {
       setIncome (prevValue => (prevValue+ Number(amt)))
       setBalance (prevValue => prevValue + Number(amt))
     } else  {
-      setExpenditure (prevValue => -1*(prevValue+ Number(amt)))
+      setExpenditure (prevValue => prevValue+ (-1*Number(amt)))
       setBalance (prevValue => prevValue + Number(amt))
     }
+  }
+
+  function removeItem(id) {
+   setTransaction(prevValue => {
+      const amt = prevValue[id].amount;
+
+      if(amt > 0) {
+        setIncome(x => (x - Number(amt)))
+        setBalance(x => (x - Number(amt)))
+      } else  {
+        setExpenditure(x => (x + Number(amt)))
+        setBalance(x => (x - Number(amt)))
+      }
+
+      return (prevValue.filter((item,index) => index !== id))
+   })
   }
 
   return (
@@ -44,7 +60,7 @@ function App() {
         <h2>History</h2>
         <ul>
           {transactions.map((transaction,index) => (
-            <ListItem item={transaction.text} amount={transaction.amount} key={index}/>
+            <ListItem item={transaction.text} amount={transaction.amount} key={index} onRemove={removeItem} id={index}/>
           ))}
         </ul>
       </div>
